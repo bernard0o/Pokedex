@@ -1014,7 +1014,7 @@
     align-items: center;
 }
 
-input[type="text"], input[type="button"]{
+input[type="text"], button{
     width: 50%;
     padding: 5px;
     border-radius: 5px;
@@ -1025,7 +1025,7 @@ input[type="text"], input[type="button"]{
 }
 
 
-input[type="button"]:hover{
+button:hover{
     background-color: #931212;
     color: white;
 }

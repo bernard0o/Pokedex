@@ -20,6 +20,8 @@ function getDataPast(){
 }
 
 async function getData(){
+    console.log("Click")
+    document.getElementById("search").disabled = true;
     let getName = document.getElementById("pokemonName").value;
     const nome = document.getElementById("nome");
     const tipo = document.getElementById("tipo");
@@ -30,7 +32,7 @@ async function getData(){
     const setaDireita = document.getElementById("rightcross");
     const setaEsquerda = document.getElementById("leftcross");
     try{
-        let connect = await fetch(url + getName);
+        let connect = await fetch((url + getName).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ""));
         let data = await connect.json();
         nome.textContent = await data["name"];
         tipo.textContent = await data.types[0].type.name;
@@ -40,6 +42,9 @@ async function getData(){
         let a = await Object.keys(data.sprites.versions)[4];
         geracao.innerText = a;
         c = data["id"];
+
+        document.getElementById("search").disabled = false;
+
 
         let i = 4;
         setaDireita.addEventListener("click", function(){
