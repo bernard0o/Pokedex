@@ -20,17 +20,13 @@ function getDataPast(){
 }
 
 async function getData(){
-    console.log("Click")
     document.getElementById("search").disabled = true;
     let getName = document.getElementById("pokemonName").value;
     const nome = document.getElementById("nome");
     const tipo = document.getElementById("tipo");
     const altura = document.getElementById("altura");
     const peso = document.getElementById("peso");
-    const geracao = document.getElementById("geracao");
     const img = document.getElementById("imagem");
-    const setaDireita = document.getElementById("rightcross");
-    const setaEsquerda = document.getElementById("leftcross");
     try{
         let connect = await fetch((url + getName).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ""));
         let data = await connect.json();
@@ -40,37 +36,9 @@ async function getData(){
         peso.textContent = await (data["weight"] / 10) + "kg";
         img.src = await data.sprites.front_default;
         let a = await Object.keys(data.sprites.versions)[4];
-        geracao.innerText = a;
         c = data["id"];
 
         document.getElementById("search").disabled = false;
-
-
-        let i = 4;
-        setaDireita.addEventListener("click", function(){
-            if (i == 7){
-                i = 1;
-            } else{
-                i++;
-            }
-            atualizar();
-        })
-        
-        setaEsquerda.addEventListener("click", function(){
-            if (i == 0){
-                i = 7;
-            } else{
-                i--;
-            }
-            atualizar();
-        })
-
-        function atualizar(){
-            let a = Object.keys(data.sprites.versions)[i];
-            geracao.innerText = a;
-            let b = Object.keys(data.sprites.versions[`${a}`])[0];
-            img.src = data.sprites.versions[`${a}`][`${b}`].front_default;
-        }
     }
     catch{
         nome.textContent = "Não encontrado";
