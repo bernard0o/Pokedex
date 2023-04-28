@@ -20,7 +20,6 @@ function getDataPast(){
 }
 
 async function getData(){
-    document.getElementById("search").disabled = true;
     let getName = document.getElementById("pokemonName").value;
     const nome = document.getElementById("nome");
     const tipo = document.getElementById("tipo");
@@ -37,8 +36,6 @@ async function getData(){
         img.src = await data.sprites.front_default;
         let a = await Object.keys(data.sprites.versions)[4];
         c = data["id"];
-
-        document.getElementById("search").disabled = false;
     }
     catch{
         nome.textContent = "Não encontrado";
