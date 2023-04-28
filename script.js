@@ -29,8 +29,8 @@ async function getData(){
     try{
         let connect = await fetch((url + getName).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ""));
         let data = await connect.json();
-        nome.textContent = await data["name"];
-        tipo.textContent = await data.types[0].type.name;
+        nome.textContent = await String(data["name"]).charAt(0).toUpperCase() + String(data["name"]).slice(1);
+        tipo.textContent = await String(data.types[0].type.name).charAt(0).toUpperCase() + String(data.types[0].type.name).slice(1);
         altura.textContent = await (data["height"] / 10) + "m";
         peso.textContent = await (data["weight"] / 10) + "kg";
         img.src = await data.sprites.front_default;
