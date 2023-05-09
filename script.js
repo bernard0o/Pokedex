@@ -20,6 +20,27 @@ function getDataPast(){
     }
 }
 
+//Search Bar
+/*
+document.getElementById("searchbar").addEventListener("change", async function(){
+            let connect = await fetch((url + i).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ""));
+            let data = await connect.json();
+            let div = document.createElement("div");
+            div.className = "pokemon";
+
+            let imagem = document.createElement("img");
+            imagem.className = "img";
+            imagem.src = await data.sprites.front_default;
+            div.appendChild(imagem)
+
+            let h2 = document.createElement("h2");
+            div.append(h2);
+
+            h2.textContent = await String(data["name"]).charAt(0).toUpperCase() + String(data["name"]).slice(1);
+            document.getElementById("bottom").appendChild(div)
+})
+*/
+
 //Lista de pokémons ao clicar no botão azul
 
 blueButton.addEventListener("click", async function(){
