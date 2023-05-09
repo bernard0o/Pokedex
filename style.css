@@ -1046,3 +1046,113 @@ body{
     justify-content: center;
     cursor: pointer;
 }
+
+div#pokemonList{
+	position: absolute;
+	width: 760px;
+	height: 520px;
+	background-color: #c00d0d;
+	z-index: 5;
+	left: 50%;
+	transform: translateX(-51%);
+	border-radius: 50px;
+	display: none;
+}
+
+div#pokemonList div#top{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+div#pokemonList div#top h1{
+	color: white;
+	font-family: Helvetica;
+	margin-top: 10px;
+}
+
+div#pokemonList div#top div#flexTop input{
+	width: 40%;
+	padding: 5px 10px;
+	margin-left: 15px;
+	outline: none;
+	border-radius: 5px;
+	border: none;
+	font-family: Helvetica;
+	background-color: #931212;
+	border: 1px solid white;
+	color: white;
+	caret-color: white;
+	margin-bottom: 5px;
+	height: 30px;
+}
+
+div#pokemonList div#bottom{
+	display: grid;
+	padding: 10px 10px;
+	gap: 10px;
+	grid-template-columns: 150px 150px 150px 150px;
+	height: 400px;
+	overflow-y: scroll;
+}
+
+div#pokemonList div#bottom img.img{
+	height: 100px;
+	width: 150px;
+	background-color: white;
+	border-radius: 10px;
+}
+
+div#pokemonList div#bottom h2{
+	color: white;
+	font-size: 15px;
+	font-family: Helvetica;
+	text-align: center;
+}
+
+div#center{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+div.pokemon div#imagem{
+	background-size: contain;
+}
+
+#bigbluebutton{
+	cursor: pointer;
+}
+
+#back{
+	width: 100px;
+	padding: 5px 10px;
+	height: 29px;
+	border: 1px solid white;
+}
+
+#flexTop{
+	display: flex;
+	justify-content: center;
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 7px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+	background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+	background: #931212;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+	background: #555;
+  }
